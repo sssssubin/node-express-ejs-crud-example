@@ -1,0 +1,227 @@
+/* 공통 스타일 */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  color: #333;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+}
+
+/* 헤더 스타일 */
+header {
+  background-color: #fff;
+  border-bottom: 1px solid #ddd;
+  padding: 20px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 2rem;
+}
+
+header nav {
+  margin-top: 10px;
+}
+
+header nav a {
+  color: #0066cc;
+  text-decoration: none;
+  margin: 0 10px;
+  font-size: 1rem;
+}
+
+header nav a:hover {
+  color: #004999;
+}
+
+/* 메인 콘텐츠 스타일 */
+main {
+  padding: 20px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* 푸터 스타일 */
+footer {
+  background-color: #fff;
+  border-top: 1px solid #ddd;
+  padding: 10px;
+  text-align: center;
+  font-size: 0.875rem;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+
+/* 'Back to Home' 링크 스타일 */
+.button.home-btn {
+  display: block;
+  text-align: center;
+  margin-top: 20px;
+  color: #0066cc;
+  text-decoration: none;
+  font-size: 1rem;
+  background-color: unset;
+}
+
+.button.home-btn:hover {
+  color: #004999;
+  background-color: unset;
+}
+
+/* 게시글 목록 스타일 */
+main ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+main ul li {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 15px;
+  margin-bottom: 10px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* 게시글 링크 스타일 */
+main ul li a:not(.button) {
+  color: #0066cc;
+  text-decoration: none;
+  font-size: 1.125rem;
+  font-weight: bold;
+  transition: color 0.3s ease;
+}
+
+main ul li a:not(.button):hover {
+  color: #004999;
+}
+
+/* 버튼 스타일 (Edit, Delete) */
+.button {
+  background-color: #0066cc;
+  color: #fff;
+  text-decoration: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 0.875rem;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.button:hover {
+  background-color: #004999;
+}
+
+/* 삭제 버튼에만 추가 스타일 */
+form {
+  display: inline;
+  margin: 0;
+}
+
+form .delete-btn {
+  background-color: #ff4c4c;
+}
+
+form .delete-btn:hover {
+  background-color: #e63946;
+}
+
+/* 등록 및 편집 페이지 스타일 */
+.base-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  max-width: 500px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.base-form h2 {
+  font-size: 1.5rem;
+  margin-bottom: 20px;
+  text-align: center;
+  color: #333;
+}
+
+/* 라벨 스타일 */
+.base-form label {
+  font-size: 1rem;
+  color: #333;
+}
+
+/* 입력 필드 스타일 */
+.base-form input[type="text"],
+.base-form textarea {
+  width: 100%;
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  box-sizing: border-box;
+}
+
+/* 텍스트 영역 크기 조절 */
+.base-form textarea {
+  height: 100px;
+  resize: vertical; /* 사용자가 텍스트 영역의 크기를 세로로만 조절 가능하도록 설정 */
+}
+
+/* 폼 버튼 스타일 */
+.base-form button {
+  background-color: #0066cc;
+  color: #fff;
+  padding: 10px 15px;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  align-self: center;
+}
+
+.base-form button:hover {
+  background-color: #004999;
+}
+
+/* View 페이지 스타일 */
+.base-post {
+  max-width: 800px;
+  margin: 30px auto;
+  padding: 20px;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* 게시글 제목 스타일 */
+.base-post h2 {
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 20px;
+  border-bottom: 2px solid #ddd;
+  padding-bottom: 10px;
+}
+
+/* 게시글 내용 스타일 */
+.base-post p {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #555;
+  margin-bottom: 30px;
+}

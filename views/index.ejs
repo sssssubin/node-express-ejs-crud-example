@@ -1,0 +1,13 @@
+<ul>
+  <% posts.forEach(post => { %>
+  <li>
+    <a href="/post/<%= post.id %>"><%= post.title %></a>
+    <form action="/delete/<%= post.id %>" method="post" style="display: inline">
+      <a type="button" class="button edit-btn" href="/edit/<%= post.id %>"
+        >Edit</a
+      >
+      <button class="button delete-btn" type="submit">Delete</button>
+    </form>
+  </li>
+  <% }) %>
+</ul>
