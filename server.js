@@ -81,6 +81,8 @@ app.post("/delete/:id", (req, res) => {
 });
 
 // 서버 시작
-app.listen(3000, () => {
-  console.log("서버연결 http://localhost:3000"); // 서버 시작 메시지
-});
+// app.listen(3000, () => {
+//   console.log("서버연결 http://localhost:3000"); // 서버 시작 메시지
+// });
+
+module.exports = app;
