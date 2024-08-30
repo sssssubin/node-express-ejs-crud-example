@@ -1,5 +1,5 @@
 {
-  "name": "express-ejs-crud-template",
+  "name": "node-express-ejs-crud-example",
   "version": "1.0.0",
   "scripts": {
     "dev": "nodemon server.js"
