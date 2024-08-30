@@ -1,0 +1,452 @@
+@use "./reset";
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap");
+
+// 색상 및 폰트 설정
+$font-family-base: "Noto Sans KR", sans-serif;
+$font-dark: #333;
+$font-light: #fff;
+$bg-color: #f4f4f4;
+$border-color: #ccc;
+$btn-primary: #03a9f3;
+$btn-primary-hover: #038fcd;
+$btn-primary-hover-border: #0286c1;
+$btn-secondary: #f4f4f4;
+$btn-secondary-hover: #e1e1e1;
+$btn-secondary-hover-border: #dbdbdb;
+$btn-danger: #fb9678;
+$btn-danger-hover: #fa7953;
+$btn-danger-hover-border: #fa6f46;
+$navbar-gradient-start: #13b4ca;
+$navbar-gradient-end: #18cabe;
+
+// Mixin 정의
+@mixin transition($properties...) {
+  transition: $properties 0.25s ease;
+}
+
+// 기본 설정
+html {
+  font-size: 62.5%; // 1rem = 10px
+}
+
+body {
+  font-family: $font-family-base;
+  background-color: $bg-color;
+  color: $font-dark;
+  margin: 0;
+  padding: 0;
+  font-size: 1rem; // 16px
+  line-height: 1.5;
+}
+
+// 유틸리티 클래스
+.label {
+  font-size: 1.8rem;
+  display: inline-block;
+}
+
+.row-group {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.col-group {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+}
+
+// 컨테이너 설정
+.container {
+  width: 100%;
+  max-width: 1200px;
+  min-width: 360px;
+  padding: 7.8rem 2rem 2rem;
+  margin: 0 auto;
+  box-sizing: border-box;
+  min-height: calc(100vh - 8.3rem);
+}
+
+// 네비게이션 바
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  background: linear-gradient(
+    88deg,
+    $navbar-gradient-start,
+    $navbar-gradient-end
+  );
+  z-index: 9999;
+  @include transition(background);
+
+  &__logo {
+    background: #fff;
+    width: 150px;
+    height: 58px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &-img {
+      height: 28px;
+      display: block;
+    }
+  }
+
+  &__menu {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    padding: 0 0 0 4rem;
+    width: calc(100% - 150px);
+    box-sizing: border-box;
+  }
+
+  &__menu-item {
+    min-width: 115px;
+    box-sizing: border-box;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 0.75rem 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    color: $font-light;
+    text-decoration: none;
+    border-radius: 0.1875rem;
+    @include transition(color, background-color, border-color, box-shadow);
+    &:hover {
+      font-weight: bold;
+    }
+  }
+}
+
+// 폼 스타일
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 100%;
+
+  &__label {
+    display: block;
+    font-size: 1.4rem;
+    margin-bottom: 0.8rem;
+    color: $font-dark;
+  }
+
+  &__input,
+  &__textarea {
+    font-size: 1.2rem;
+    color: #495057;
+    background-color: #fff;
+    border: 1px solid #f3f3f3;
+    border-radius: 2px 0 0 2px;
+    box-sizing: border-box;
+    outline: none;
+    @include transition(border-color, box-shadow);
+
+    &::placeholder {
+      color: #c9c8cb;
+    }
+
+    &:focus {
+      border-color: #80bdff;
+    }
+  }
+
+  &__input {
+    height: 3.8rem;
+    padding: 0 1.5rem;
+  }
+
+  &__textarea {
+    resize: none;
+    min-height: 15rem;
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+  }
+}
+
+// 버튼 스타일
+.button {
+  flex: 1;
+  border: none;
+  font-weight: 700;
+  border-radius: 4px;
+  padding: 0 1.5rem;
+  font-size: 1.4rem;
+  @include transition(color, background-color, border-color, box-shadow);
+  cursor: pointer;
+  &__primary,
+  &__submit {
+    color: $font-light;
+    background-color: $btn-primary;
+    border-color: $btn-primary;
+
+    &:hover {
+      background-color: $btn-primary-hover;
+      border-color: $btn-primary-hover-border;
+    }
+  }
+
+  &__edit,
+  &__home {
+    color: $font-dark;
+    background-color: $btn-secondary;
+    border-color: $btn-secondary;
+
+    &:hover {
+      background-color: $btn-secondary-hover;
+      border-color: $btn-secondary-hover-border;
+    }
+  }
+
+  &__delete {
+    color: $font-light;
+    background-color: $btn-danger;
+    border-color: $btn-danger;
+
+    &:hover {
+      background-color: $btn-danger-hover;
+      border-color: $btn-danger-hover-border;
+    }
+  }
+
+  &__edit,
+  &__delete,
+  &__submit,
+  &__home {
+    padding: 6px 10px !important;
+  }
+}
+
+a.button {
+  text-decoration: none;
+  display: inline-block;
+  text-align: center;
+}
+
+// 카드 스타일
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  width: 100%;
+}
+
+.card {
+  flex: 1 1 calc((100% / 3) - (4rem / 3));
+  max-width: calc((100% / 3) - (4rem / 3));
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #fff;
+  border: none;
+  border-radius: 2px;
+  box-sizing: border-box;
+  padding: 3rem;
+  gap: 2rem;
+
+  &__title {
+    margin-bottom: 1.5rem;
+    font-weight: bold;
+    font-size: 1.8rem;
+  }
+
+  img {
+    width: 100%;
+    max-width: 140px;
+    height: auto;
+    min-height: 200px;
+    max-height: 200px;
+    border-radius: 4px;
+    background-color: #f5f5f5;
+    object-fit: cover;
+    overflow: hidden;
+  }
+
+  &__details {
+    text-align: center;
+
+    .heading-card {
+      font-size: 2rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .text-card {
+      font-size: 1.6rem;
+      margin: 0.5rem 0;
+    }
+  }
+
+  .card-img {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+  }
+
+  .card-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+    width: 100%;
+    height: 100%;
+
+    .heading-card-sub {
+      font-size: 1.8rem;
+      font-weight: bold;
+      display: flex;
+      align-items: center;
+      height: 100%;
+      text-align: center;
+    }
+
+    .text-card-sub {
+      font-size: 1.4rem;
+
+      &:first-of-type {
+        color: #999;
+        font-weight: 300;
+      }
+    }
+  }
+
+  // 테이블 스타일
+  &:has(.table) {
+    + .card {
+      margin-top: 2rem;
+    }
+
+    &.hide {
+      display: none;
+    }
+  }
+
+  &__link {
+    font-size: 1.6rem;
+    text-decoration: none;
+    color: $font-dark;
+  }
+}
+
+// 지도 스타일
+.map-wrapper {
+  flex: 1 1 calc((100% / 3) - (4rem / 3));
+  max-width: calc((100% / 3) - (4rem / 3));
+  padding: 3rem;
+  background-color: #fff;
+  box-sizing: border-box;
+}
+
+.map-container {
+  position: relative;
+  width: 100%;
+  padding-top: 100%;
+  overflow: hidden;
+  border-radius: 5px;
+}
+
+.map {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+// 푸터 스타일
+.footer {
+  width: 100%;
+  max-width: 1200px;
+  min-width: 360px;
+  margin: 0 auto;
+  background: $bg-color;
+  padding: 2.5rem;
+  @include transition(all);
+  border-top: 1px solid #f3f3f3;
+  font-size: 1.4rem;
+  box-sizing: border-box;
+
+  &__text {
+    color: #8d9498 !important;
+  }
+}
+
+// 배지 스타일
+.badge {
+  min-width: 70px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.25rem;
+  font-size: 1.4rem;
+  font-weight: bold;
+  line-height: 1;
+  padding: 0.5rem 0.375rem;
+  text-align: center;
+  white-space: nowrap;
+  @include transition(color, background-color, border-color, box-shadow);
+
+  &__pass {
+    border: 1px solid #00c292;
+    color: #fff;
+    background-color: #00c292;
+  }
+
+  &__reject {
+    border: 1px solid #ffb463;
+    color: #fff;
+    background-color: #ffb463;
+  }
+}
+
+// 폼 컨테이너 스타일
+.form-container {
+  .card {
+    width: 100%;
+    max-width: 100%;
+  }
+}
+
+// 반응형 디자인
+@media (max-width: 768px) {
+  .card,
+  .map-wrapper {
+    flex: 1 1 100%;
+    max-width: 100%;
+  }
+
+  .form__search {
+    &.col {
+      display: block;
+
+      .input {
+        width: 100%;
+        border-radius: 4px 4px 0 0;
+        &:focus {
+          border: 1px solid #80bdff;
+        }
+      }
+
+      .btn {
+        height: 3.8rem;
+        width: 100%;
+        border-radius: 0 0 4px 4px;
+      }
+    }
+  }
+
+  .card {
+    padding: 2rem;
+  }
+}

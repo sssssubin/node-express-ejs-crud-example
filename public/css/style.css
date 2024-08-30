@@ -1,227 +1,501 @@
-/* 공통 스타일 */
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap");
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+
 body {
-  font-family: Arial, sans-serif;
+  line-height: 1;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+blockquote,
+q {
+  quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-family: "Noto Sans KR", sans-serif;
   background-color: #f4f4f4;
   color: #333;
   margin: 0;
   padding: 0;
-  line-height: 1.6;
+  font-size: 1rem;
+  line-height: 1.5;
 }
 
-/* 헤더 스타일 */
-header {
-  background-color: #fff;
-  border-bottom: 1px solid #ddd;
-  padding: 20px;
-  text-align: center;
+.label {
+  font-size: 1.8rem;
+  display: inline-block;
+}
+
+.row-group {
   display: flex;
   flex-direction: column;
-  align-items: center;
+  gap: 1rem;
 }
 
-header h1 {
-  margin: 0;
-  font-size: 2rem;
-}
-
-header nav {
-  margin-top: 10px;
-}
-
-header nav a {
-  color: #0066cc;
-  text-decoration: none;
-  margin: 0 10px;
-  font-size: 1rem;
-}
-
-header nav a:hover {
-  color: #004999;
-}
-
-/* 메인 콘텐츠 스타일 */
-main {
-  padding: 20px;
-  max-width: 800px;
-  margin: 0 auto;
-}
-
-/* 푸터 스타일 */
-footer {
-  background-color: #fff;
-  border-top: 1px solid #ddd;
-  padding: 10px;
-  text-align: center;
-  font-size: 0.875rem;
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-}
-
-/* 'Back to Home' 링크 스타일 */
-.button.home-btn {
-  display: block;
-  text-align: center;
-  margin-top: 20px;
-  color: #0066cc;
-  text-decoration: none;
-  font-size: 1rem;
-  background-color: unset;
-}
-
-.button.home-btn:hover {
-  color: #004999;
-  background-color: unset;
-}
-
-/* 게시글 목록 스타일 */
-main ul {
-  list-style-type: none;
-  padding: 0;
-  margin: 0;
-}
-
-main ul li {
-  background-color: #fff;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  padding: 15px;
-  margin-bottom: 10px;
+.col-group {
   display: flex;
-  justify-content: space-between;
+  flex-direction: row;
+  gap: 1rem;
+}
+
+.container {
+  width: 100%;
+  max-width: 1200px;
+  min-width: 360px;
+  padding: 7.8rem 2rem 2rem;
+  margin: 0 auto;
+  box-sizing: border-box;
+  min-height: calc(100vh - 8.3rem);
+}
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  background: linear-gradient(88deg, #13b4ca, #18cabe);
+  z-index: 9999;
+  transition: background 0.25s ease;
+}
+.header__logo {
+  background: #fff;
+  width: 150px;
+  height: 58px;
+  display: flex;
   align-items: center;
+  justify-content: center;
 }
-
-/* 게시글 링크 스타일 */
-main ul li a:not(.button) {
-  color: #0066cc;
-  text-decoration: none;
-  font-size: 1.125rem;
-  font-weight: bold;
-  transition: color 0.3s ease;
+.header__logo-img {
+  height: 28px;
+  display: block;
 }
-
-main ul li a:not(.button):hover {
-  color: #004999;
+.header__menu {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  padding: 0 0 0 4rem;
+  width: calc(100% - 150px);
+  box-sizing: border-box;
 }
-
-/* 버튼 스타일 (Edit, Delete) */
-.button {
-  background-color: #0066cc;
+.header__menu-item {
+  min-width: 115px;
+  box-sizing: border-box;
+  background: rgba(255, 255, 255, 0.1);
+  padding: 0.75rem 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
   color: #fff;
   text-decoration: none;
-  padding: 5px 10px;
-  border-radius: 5px;
-  font-size: 0.875rem;
-  border: none;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
+  border-radius: 0.1875rem;
+  transition: color, background-color, border-color, box-shadow 0.25s ease;
+}
+.header__menu-item:hover {
+  font-weight: bold;
 }
 
-.button:hover {
-  background-color: #004999;
-}
-
-/* 삭제 버튼에만 추가 스타일 */
-form {
-  display: inline;
-  margin: 0;
-}
-
-form .delete-btn {
-  background-color: #ff4c4c;
-}
-
-form .delete-btn:hover {
-  background-color: #e63946;
-}
-
-/* 등록 및 편집 페이지 스타일 */
-.base-form {
+.form {
   display: flex;
   flex-direction: column;
-  gap: 15px;
-  max-width: 500px;
-  margin: 0 auto;
-  padding: 20px;
-  background-color: #fff;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-
-.base-form h2 {
-  font-size: 1.5rem;
-  margin-bottom: 20px;
-  text-align: center;
-  color: #333;
-}
-
-/* 라벨 스타일 */
-.base-form label {
-  font-size: 1rem;
-  color: #333;
-}
-
-/* 입력 필드 스타일 */
-.base-form input[type="text"],
-.base-form textarea {
+  gap: 1rem;
   width: 100%;
-  padding: 10px;
-  font-size: 1rem;
-  border: 1px solid #ddd;
-  border-radius: 5px;
+}
+.form__label {
+  display: block;
+  font-size: 1.4rem;
+  margin-bottom: 0.8rem;
+  color: #333;
+}
+.form__input, .form__textarea {
+  font-size: 1.2rem;
+  color: #495057;
+  background-color: #fff;
+  border: 1px solid #f3f3f3;
+  border-radius: 2px 0 0 2px;
+  box-sizing: border-box;
+  outline: none;
+  transition: border-color, box-shadow 0.25s ease;
+}
+.form__input::-moz-placeholder, .form__textarea::-moz-placeholder {
+  color: #c9c8cb;
+}
+.form__input::placeholder, .form__textarea::placeholder {
+  color: #c9c8cb;
+}
+.form__input:focus, .form__textarea:focus {
+  border-color: #80bdff;
+}
+.form__input {
+  height: 3.8rem;
+  padding: 0 1.5rem;
+}
+.form__textarea {
+  resize: none;
+  min-height: 15rem;
+  margin-bottom: 2rem;
+  padding: 1.5rem;
+}
+
+.button {
+  flex: 1;
+  border: none;
+  font-weight: 700;
+  border-radius: 4px;
+  padding: 0 1.5rem;
+  font-size: 1.4rem;
+  transition: color, background-color, border-color, box-shadow 0.25s ease;
+  cursor: pointer;
+}
+.button__primary, .button__submit {
+  color: #fff;
+  background-color: #03a9f3;
+  border-color: #03a9f3;
+}
+.button__primary:hover, .button__submit:hover {
+  background-color: #038fcd;
+  border-color: #0286c1;
+}
+.button__edit, .button__home {
+  color: #333;
+  background-color: #f4f4f4;
+  border-color: #f4f4f4;
+}
+.button__edit:hover, .button__home:hover {
+  background-color: #e1e1e1;
+  border-color: #dbdbdb;
+}
+.button__delete {
+  color: #fff;
+  background-color: #fb9678;
+  border-color: #fb9678;
+}
+.button__delete:hover {
+  background-color: #fa7953;
+  border-color: #fa6f46;
+}
+.button__edit, .button__delete, .button__submit, .button__home {
+  padding: 6px 10px !important;
+}
+
+a.button {
+  text-decoration: none;
+  display: inline-block;
+  text-align: center;
+}
+
+.cards {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  width: 100%;
+}
+
+.card {
+  flex: 1 1 calc(33.3333333333% - 1.3333333333rem);
+  max-width: calc(33.3333333333% - 1.3333333333rem);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #fff;
+  border: none;
+  border-radius: 2px;
+  box-sizing: border-box;
+  padding: 3rem;
+  gap: 2rem;
+}
+.card__title {
+  margin-bottom: 1.5rem;
+  font-weight: bold;
+  font-size: 1.8rem;
+}
+.card img {
+  width: 100%;
+  max-width: 140px;
+  height: auto;
+  min-height: 200px;
+  max-height: 200px;
+  border-radius: 4px;
+  background-color: #f5f5f5;
+  -o-object-fit: cover;
+     object-fit: cover;
+  overflow: hidden;
+}
+.card__details {
+  text-align: center;
+}
+.card__details .heading-card {
+  font-size: 2rem;
+  margin-bottom: 0.5rem;
+}
+.card__details .text-card {
+  font-size: 1.6rem;
+  margin: 0.5rem 0;
+}
+.card .card-img {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+}
+.card .card-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  width: 100%;
+  height: 100%;
+}
+.card .card-text .heading-card-sub {
+  font-size: 1.8rem;
+  font-weight: bold;
+  display: flex;
+  align-items: center;
+  height: 100%;
+  text-align: center;
+}
+.card .card-text .text-card-sub {
+  font-size: 1.4rem;
+}
+.card .card-text .text-card-sub:first-of-type {
+  color: #999;
+  font-weight: 300;
+}
+.card:has(.table) + .card {
+  margin-top: 2rem;
+}
+.card:has(.table).hide {
+  display: none;
+}
+.card__link {
+  font-size: 1.6rem;
+  text-decoration: none;
+  color: #333;
+}
+
+.map-wrapper {
+  flex: 1 1 calc(33.3333333333% - 1.3333333333rem);
+  max-width: calc(33.3333333333% - 1.3333333333rem);
+  padding: 3rem;
+  background-color: #fff;
   box-sizing: border-box;
 }
 
-/* 텍스트 영역 크기 조절 */
-.base-form textarea {
-  height: 100px;
-  resize: vertical; /* 사용자가 텍스트 영역의 크기를 세로로만 조절 가능하도록 설정 */
-}
-
-/* 폼 버튼 스타일 */
-.base-form button {
-  background-color: #0066cc;
-  color: #fff;
-  padding: 10px 15px;
-  border: none;
+.map-container {
+  position: relative;
+  width: 100%;
+  padding-top: 100%;
+  overflow: hidden;
   border-radius: 5px;
-  font-size: 1rem;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-  align-self: center;
 }
 
-.base-form button:hover {
-  background-color: #004999;
+.map {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
 
-/* View 페이지 스타일 */
-.base-post {
-  max-width: 800px;
-  margin: 30px auto;
-  padding: 20px;
-  background-color: #fff;
-  border: 1px solid #ddd;
-  border-radius: 8px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+.footer {
+  width: 100%;
+  max-width: 1200px;
+  min-width: 360px;
+  margin: 0 auto;
+  background: #f4f4f4;
+  padding: 2.5rem;
+  transition: all 0.25s ease;
+  border-top: 1px solid #f3f3f3;
+  font-size: 1.4rem;
+  box-sizing: border-box;
+}
+.footer__text {
+  color: #8d9498 !important;
 }
 
-/* 게시글 제목 스타일 */
-.base-post h2 {
-  font-size: 2rem;
-  color: #333;
-  margin-bottom: 20px;
-  border-bottom: 2px solid #ddd;
-  padding-bottom: 10px;
+.badge {
+  min-width: 70px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 0.25rem;
+  font-size: 1.4rem;
+  font-weight: bold;
+  line-height: 1;
+  padding: 0.5rem 0.375rem;
+  text-align: center;
+  white-space: nowrap;
+  transition: color, background-color, border-color, box-shadow 0.25s ease;
+}
+.badge__pass {
+  border: 1px solid #00c292;
+  color: #fff;
+  background-color: #00c292;
+}
+.badge__reject {
+  border: 1px solid #ffb463;
+  color: #fff;
+  background-color: #ffb463;
 }
 
-/* 게시글 내용 스타일 */
-.base-post p {
-  font-size: 1rem;
-  line-height: 1.6;
-  color: #555;
-  margin-bottom: 30px;
+.form-container .card {
+  width: 100%;
+  max-width: 100%;
 }
+
+@media (max-width: 768px) {
+  .card,
+  .map-wrapper {
+    flex: 1 1 100%;
+    max-width: 100%;
+  }
+  .form__search.col {
+    display: block;
+  }
+  .form__search.col .input {
+    width: 100%;
+    border-radius: 4px 4px 0 0;
+  }
+  .form__search.col .input:focus {
+    border: 1px solid #80bdff;
+  }
+  .form__search.col .btn {
+    height: 3.8rem;
+    width: 100%;
+    border-radius: 0 0 4px 4px;
+  }
+  .card {
+    padding: 2rem;
+  }
+}/*# sourceMappingURL=style.css.map */

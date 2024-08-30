@@ -1,9 +1,32 @@
-<h2>New Post</h2>
-<form action="/new" method="post" class="base-form">
-  <label for="title">Title:</label>
-  <input type="text" id="title" name="title" required />
-  <label for="content">Content:</label>
-  <textarea id="content" name="content" required></textarea>
-  <button type="submit">Create Post</button>
-</form>
-<a href="/" class="button home-btn">Back to Home</a>
+<div class="form-container">
+  <div class="card">
+    <h2 class="card__title">New Post</h2>
+    <form action="/new" method="post" class="card__form form row-group">
+      <div class="form-group row-group">
+        <label for="title" class="form__label">Title:</label>
+        <input
+          type="text"
+          id="title"
+          name="title"
+          required
+          class="form__input"
+        />
+      </div>
+      <div class="form-group row-group">
+        <label for="content" class="form__label">Content:</label>
+        <textarea
+          id="content"
+          name="content"
+          required
+          class="form__textarea"
+        ></textarea>
+      </div>
+      <div class="col-group">
+        <a href="/" class="button button__home">Back to Home</a>
+        <button type="submit" class="form__button button button__submit">
+          Create Post
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

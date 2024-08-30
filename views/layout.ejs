@@ -4,18 +4,21 @@
     <meta charset="UTF-8" />
     <title>express-ejs-crud-template</title>
     <link rel="stylesheet" href="/css/style.css" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
   </head>
   <body>
-    <header>
-      <h1>express-ejs-crud-template</h1>
-      <nav>
-        <a href="/">Home</a>
-        <a href="/new">New Post</a>
-      </nav>
-    </header>
-    <main><%- body %></main>
-    <footer>
-      <p>&copy; 2024 express-ejs-crud-template</p>
+    <nav class="header">
+      <a href="/" class="header__logo">
+        <img src="/logo.png" alt="Logo" class="header__logo-img" />
+      </a>
+      <div class="header__menu">
+        <a href="/" class="header__menu-item">Home</a>
+        <a href="/new" class="header__menu-item">New Post</a>
+      </div>
+    </nav>
+    <main class="container"><%- body %></main>
+    <footer class="footer">
+      <p class="footer__text">© subin 2024</p>
     </footer>
   </body>
 </html>
