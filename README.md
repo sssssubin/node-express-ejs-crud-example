@@ -2,7 +2,7 @@
 
 이 프로젝트는 Node.js 환경에서 Express와 EJS(Embedded JavaScript)를 사용하여 웹 애플리케이션을 개발하기 위한 템플릿입니다. EJS 템플릿 엔진을 사용하여 서버 사이드 렌더링을 지원하며, 게시글의 생성, 수정, 삭제 및 조회 기능을 구현하여 기본적인 CRUD 작업을 실습할 수 있습니다. Node.js, Express, EJS의 핵심 개념을 학습하고 실습할 수 있는 예제입니다.
 
-확장된 버전: MongoDB를 추가하여 데이터를 동적으로 관리할 수 있는 프로젝트는 [여기](https://github.com/sssssubin/node-express-ejs-crud-mongoose-example)에서 확인할 수 있습니다.
+**확장된 버전**: MongoDB를 추가하여 데이터를 동적으로 관리할 수 있는 프로젝트는 [여기](https://github.com/sssssubin/node-express-ejs-crud-mongoose-example)에서 확인할 수 있습니다.
 
 ## 프로젝트 구조
 
